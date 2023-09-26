@@ -1,0 +1,22 @@
+<div
+  *ngIf="client"
+  class="bg-accent items-center text-neutral flex flex-col p-5 rounded-xl"
+>
+  <span
+    *ngIf="isLoading"
+    class="self-center loading loading-spinner loading-lg"
+  ></span>
+  <h1 class="text-neutral font-semibold text-2xl">Informacion Del Cliente</h1>
+
+  <h2>{{ client.idCliente }}</h2>
+  <h3>{{ client.categoria }}</h3>
+  <h4>{{ client.nombreCliente }} {{ client.apellidoCliente }}</h4>
+
+  <div class="flex justify-between w-full">
+    <a
+      class="btn btn-active btn-primary"
+      [routerLink]="['/update-client', client.idCliente]"
+      >Editar</a
+    ><button (click)="delete()" class="btn btn-error">Eliminar</button>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<form
+  [formGroup]="clientForm"
+  class="bg-primary p-5 rounded flex flex-col items-center gap-5"
+>
+  <h1 class="text-neutral text-xl font-semibold">
+    {{
+      client
+        ? "Actualiza la informacion del cliente"
+        : "Registra un nuevo cliente"
+    }}
+  </h1>
+  <div class="form-control w-full max-w-xs">
+    <label class="label">
+      <span class="label-text text-neutral">Nombre</span>
+    </label>
+    <input
+      type="text"
+      formControlName="nombreCliente"
+      placeholder="Nombre del cliente..."
+      class="input input-bordered w-full max-w-xs"
+    />
+  </div>
+  <div class="form-control w-full max-w-xs">
+    <label class="label">
+      <span class="label-text text-neutral">Apellido</span>
+    </label>
+    <input
+      type="text"
+      formControlName="apellidoCliente"
+      placeholder="Apellido del cliente..."
+      class="input input-bordered w-full max-w-xs"
+    />
+  </div>
+  <div class="form-control w-full max-w-xs">
+    <label class="label">
+      <span class="label-text text-neutral">Categoria</span>
+    </label>
+    <input
+      type="text"
+      formControlName="categoria"
+      placeholder="Categoria..."
+      class="input input-bordered w-full max-w-xs"
+    />
+  </div>
+  <button (click)="submit()" class="btn btn-neutral w-full" type="submit">
+    {{ client ? "Actualizar" : "Registrar" }}
+  </button>
+</form>
